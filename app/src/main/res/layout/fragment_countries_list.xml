@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_countries_list_search"
+            android:background="@color/secondary_variant"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryHint="@string/country_list_search_hint" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/countries_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@null"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/empty_state_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:padding="@dimen/margin_default">
+
+            <ImageView
+                android:id="@+id/empty_icon"
+                android:layout_width="@dimen/empty_state_width_height"
+                android:layout_height="@dimen/empty_state_width_height"
+                android:src="@drawable/icn_empty_state"
+                app:layout_constraintBottom_toTopOf="@id/horizontal_guide"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/horizontal_guide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:id="@+id/empty_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/empty_state_message"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_x_large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guide" />
+
+            <TextView
+                android:id="@+id/empty_message_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/empty_state_detail"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_default"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/empty_message" />
+
+            <Button
+                android:id="@+id/refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_default"
+                android:text="@string/countries_list_refresh_now"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/empty_message_detail" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,79 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        applicationId "uk.geekhole.busuu"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding true
+        viewBinding = true
+    }
+    buildToolsVersion '30.0.2'
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.5.0'
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    // Hilt & Dagger
+    implementation "com.google.dagger:hilt-android:$dagger_version"
+    implementation "com.squareup.inject:assisted-inject-annotations-dagger2:$assisted_inject_version"
+    kapt "com.google.dagger:hilt-android-compiler:$dagger_version"
+    kapt "androidx.hilt:hilt-compiler:$androidx_hilt_version"
+    implementation group: 'androidx.hilt', name: 'hilt-lifecycle-viewmodel', version: "$androidx_hilt_version"
+
+    // Networking libraries
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_rx_adapter_version"
+
+    // Database libraries
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    implementation "androidx.room:room-rxjava2:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    // So we can use nice extension methods in our fragment(s)
+    implementation "androidx.fragment:fragment-ktx:1.3.4"
+
+    // Helpful Rx bits
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
+
+    // SVG support
+    implementation 'com.caverock:androidsvg-aar:1.4'
+
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation "org.mockito:mockito-core:3.10.0"
+    testImplementation "org.mockito:mockito-inline:3.10.0"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+}

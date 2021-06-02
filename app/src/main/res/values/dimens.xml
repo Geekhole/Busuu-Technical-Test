@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_default">16dp</dimen>
+    <dimen name="empty_state_width_height">100dp</dimen>
+    <dimen name="font_size_x_large">24sp</dimen>
+    <dimen name="radius_default_corners">8dp</dimen>
+    <dimen name="height_row_country">60dp</dimen>
+    <dimen name="font_size_default">16sp</dimen>
+    <dimen name="margin_row_country">4dp</dimen>
+    <dimen name="min_height_country_details_flag">150dp</dimen>
+    <dimen name="width_row_country_flag">80dp</dimen>
+    <dimen name="height_countries_list_search">60dp</dimen>
+</resources>

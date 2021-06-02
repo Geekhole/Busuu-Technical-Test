@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="country"
+            type="uk.geekhole.busuu.models.database.Country" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_row_country"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginTop="@dimen/margin_row_country"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:layout_marginBottom="@dimen/margin_row_country"
+        android:background="@drawable/background_row_country"
+        android:padding="@dimen/margin_default">
+
+        <ImageView
+            android:id="@+id/flag"
+            android:layout_width="@dimen/width_row_country_flag"
+            android:layout_height="wrap_content"
+            android:src="@{country}"
+            android:tag="@{country.name}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/icn_img_placeholder" />
+
+        <TextView
+            android:id="@+id/country_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_default"
+            android:text="@{country.name}"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/flag"
+            app:layout_constraintStart_toEndOf="@id/flag"
+            app:layout_constraintTop_toTopOf="@id/flag"
+            tools:text="United Kingdom" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

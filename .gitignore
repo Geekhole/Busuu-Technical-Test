@@ -80,3 +80,11 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+
+.idea/
+
+app/src/androidTest/java/uk/geekhole/busuu/ExampleInstrumentedTest.kt
+
+gradlew
+
+gradlew.bat

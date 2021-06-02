@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Busuu</string>
+    <string name="empty_state_message">Such empty!</string>
+    <string name="error_fetching_countries">There was an error fetching the countries. Please try again.</string>
+    <string name="empty_state_detail">Swipe down to refresh</string>
+    <string name="country_capital">Capital city: %1$s</string>
+    <string name="country_currencies">Available currencies: %1$s</string>
+    <string name="generic_error">There was an error. Please try again</string>
+    <string name="country_list_search_hint">Search for a country...</string>
+    <string name="countries_list_refresh_now">Refresh now</string>
+    <string name="internet_error">Looks like there was an error connecting to the internet. Please check your connection and try again.</string>
+</resources>
