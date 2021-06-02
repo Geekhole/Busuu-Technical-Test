@@ -1,5 +1,7 @@
 # Busuu Technical Test
 
+The codebase is probably more complex than it needs to be considering the basic brief, however this is how I would set up a new project assuming that it would grow and expand with different features.
+
 Given more time I would improve the following:
 - Resolve issues with unit testing (Mockito errors due to strange configuration issues)
 - Improve searching. Currently it's possible the search results could be overwritten if the api changed the db during a search.
@@ -16,4 +18,3 @@ Given more time I would improve the following:
 - Flags are downloaded when the RecyclerView binds an item to a ViewHolder. They are saved when this occurs. Technically this means that you could end up with a couple of flags off screen that are downloaded and not seen, but for performance that's better anyway. When loading the flag again we check if the image already exists and load this if it does. As mentioned above, the ImageHelper class could likely be vastly improved for both performance and caching. Usually I would use something like Glide to manage images, but Glide does not support caching SVG images out of the box.
 - Empty state is displayed if there are no countries. There is a retry button for the user to use. I could have implemented a connection state listener to retry automatically when network state was restored given mroe time.
 - Unit tests exist at incredibly basic level. As mentioned above there was an issue with Mockito that prevented me from continuing this due to time constraints.
-
